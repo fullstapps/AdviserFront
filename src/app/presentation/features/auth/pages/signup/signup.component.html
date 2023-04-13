@@ -1,0 +1,76 @@
+<div class="form">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmitForm()">
+    <div class="field">
+      <label class="label" for="email">Correo electrónico</label>
+      <div class="control">
+        <input
+          type="email"
+          name="email"
+          class="input"
+          formControlName="email"
+        />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label" for="first_name">Nombre</label>
+      <div class="control">
+        <input
+          type="text"
+          name="first_name"
+          class="input"
+          formControlName="first_name"
+        />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label" for="last_name">Apellido</label>
+      <div class="control">
+        <input
+          type="text"
+          name="last_name"
+          class="input"
+          formControlName="last_name"
+        />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label" for="password">Contraseña</label>
+      <div class="control">
+        <input
+          type="password"
+          name="password"
+          class="input"
+          formControlName="password"
+        />
+      </div>
+    </div>
+
+    <div class="field field-terms">
+      <label class="checkbox">
+        <input type="checkbox" formControlName="agree" />
+        Acepto expresamente, conozco y he leído la
+        <a href="#" target="_blank">política de privacidad</a>
+        en relación con el tratamiento de mis datos personales
+      </label>
+      <!-- <span class="input-error" *ngIf="errorAgree">
+					Debes aceptar la política de privacidad
+				</span> -->
+    </div>
+    <button
+      type="submit"
+      class="button is-info is-fullwidth"
+      [ngClass]="{ 'is-loading': isLoading }"
+    >
+      Registrarme
+    </button>
+    <p class="error has-text-danger mt-4" *ngIf="isErrors.form">
+      Debes Completar todos los campos
+    </p>
+    <p class="error has-text-danger mt-4" *ngIf="isErrors.back">
+      Email incorrecto o ya existe
+    </p>
+  </form>
+  <div class="form__footer">
+    <p>¿Ya tienes cuenta? <a routerLink="/auth/login">Ingresa</a></p>
+  </div>
+</div>

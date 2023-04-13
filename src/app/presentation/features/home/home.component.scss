@@ -1,0 +1,27 @@
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__card {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    min-height: 500px;
+    position: relative;
+    &-body {
+      padding: 1rem;
+    }
+    &-request {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+    }
+    &-messages {
+      height: 570px;
+      overflow: auto;
+      padding: 12px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #dfdfdf;
+  &__bot {
+    width: 108px;
+  }
+  &__text {
+    flex-grow: 1;
+    h1 {
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+    .status {
+      display: flex;
+      align-items: center;
+      .circle {
+        width: 12px;
+        height: 12px;
+        background: #47be7d;
+        margin-right: 4px;
+        border-radius: 50%;
+      }
+      span {
+        color: #47be7d;
+        font-weight: 600;
+      }
+    }
+  }
+  &__logof {
+    width: 84px;
+  }
+}

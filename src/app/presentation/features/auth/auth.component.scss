@@ -1,0 +1,64 @@
+.auth {
+  display: flex;
+  min-height: 100vh;
+
+  &__left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    .bot {
+      width: 285px;
+    }
+    .text {
+      text-align: center;
+      h1 {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+    }
+  }
+  &__right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .card {
+      width: 100%;
+      max-width: 549px;
+      padding: 4rem;
+      .logo {
+        width: 79px;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+@media (max-width: 720px) {
+  .auth {
+    flex-direction: column;
+    &__left {
+      width: 100%;
+      padding: 1rem;
+      .bot {
+        width: 120px;
+      }
+      .text {
+        h1 {
+          font-size: 1.1rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    &__right {
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+}

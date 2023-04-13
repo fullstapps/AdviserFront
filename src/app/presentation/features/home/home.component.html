@@ -1,0 +1,36 @@
+<div class="home">
+  <div class="card home__card">
+    <app-header></app-header>
+
+    <div class="home__card-body">
+      <ng-container *ngIf="profile$ | async as profile">
+        <app-biography
+          (infoHandler)="onUpdateProfile($event)"
+          *ngIf="!profile.bio"
+        ></app-biography>
+        <ng-container *ngIf="profile.bio">
+          <div class="home__card-messages" id="box">
+            <ng-container *ngIf="messages$ | async as messages">
+              <div class="empty" *ngIf="messages.length == 0">
+                <h1>Pide tu primer consejo dandole click al botón</h1>
+              </div>
+              <ng-container *ngFor="let message of messages">
+                <app-message [message]="message"></app-message>
+              </ng-container>
+            </ng-container>
+          </div>
+          <div class="home__card-request">
+            <button
+              (click)="onRequestMessage()"
+              type="button"
+              class="button is-success"
+              [ngClass]="{ 'is-loading': isLoadingRequest }"
+            >
+              Pedir Consejo
+            </button>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

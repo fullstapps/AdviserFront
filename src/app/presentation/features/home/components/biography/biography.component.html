@@ -1,0 +1,52 @@
+<div class="form">
+  <div class="form__title">
+    <h1>
+      Para poder darte consejos de desarrollo primero completa la información a
+      continuación
+    </h1>
+  </div>
+  <form [formGroup]="bioForm" (ngSubmit)="onSubmitForm()">
+    <div class="field">
+      <label class="label" for="email">Biografía</label>
+      <span class="description"
+        >Escribe una biografía corta que te describa profesionalmente</span
+      >
+      <div class="control">
+        <textarea
+          name="bio"
+          formControlName="bio"
+          id=""
+          cols="30"
+          rows="30"
+          class="input"
+          placeholder=""
+        ></textarea>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label" for="skills">Skills</label>
+      <span class="description"
+        >Puedes escribir todas las skills que tienes separadas por comas por
+        ejm, Angular, React, Python. Django</span
+      >
+      <div class="control">
+        <input
+          type="text"
+          name="skills"
+          class="input"
+          formControlName="skills"
+        />
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="button is-success"
+      [ngClass]="{ 'is-loading': isLoading }"
+    >
+      Guardar información
+    </button>
+    <p class="error has-text-danger mt-4" *ngIf="isError">
+      Debes Completar todos los campos
+    </p>
+  </form>
+</div>

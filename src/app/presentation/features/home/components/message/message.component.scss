@@ -1,0 +1,13 @@
+.message-container {
+  padding: 12px;
+  background: #ebf3fb;
+  border-radius: 20px;
+  margin-bottom: 13px;
+  position: relative;
+  .bot {
+    position: absolute;
+    width: 25px;
+    top: -9px;
+    left: -11px;
+  }
+}
